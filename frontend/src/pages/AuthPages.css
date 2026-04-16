@@ -1,0 +1,109 @@
+.auth-page {
+  min-height: 100vh; background: #fff;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 20px 16px 60px;
+}
+.auth-logo {
+  font-size: 32px; font-weight: 800; color: #131921;
+  text-decoration: none; margin-bottom: 20px;
+}
+.auth-logo span { color: var(--amazon-orange); font-size: 16px; }
+.auth-box {
+  width: 100%; max-width: 350px;
+  border: 1px solid #ddd; border-radius: var(--radius-lg);
+  padding: 22px 26px; margin-bottom: 12px; background: #fff;
+}
+.auth-box h1 { font-size: 26px; font-weight: 400; margin-bottom: 20px; }
+.demo-hint {
+  background: #fff8e1; border: 1px dashed #f0c14b;
+  border-radius: var(--radius); padding: 8px 12px;
+  font-size: 12px; color: #666; cursor: pointer;
+  margin-bottom: 16px; text-align: center;
+  transition: background 0.15s;
+}
+.demo-hint:hover { background: #fff3cd; }
+.auth-field { margin-bottom: 14px; }
+.auth-field label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.auth-field input {
+  width: 100%; padding: 7px 10px;
+  border: 1px solid #a6a6a6; border-radius: var(--radius);
+  font-size: 14px; outline: none;
+}
+.auth-field input:focus { border-color: var(--amazon-orange); box-shadow: 0 0 0 2px rgba(255,153,0,0.25); }
+.auth-field input.error { border-color: var(--amazon-red); }
+.auth-error { font-size: 12px; color: var(--amazon-red); display: block; margin-top: 3px; }
+.auth-submit {
+  width: 100%; padding: 9px;
+  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+  border: 1px solid #a88734; border-radius: var(--radius);
+  font-size: 13px; font-weight: 500; cursor: pointer; margin-top: 4px;
+}
+.auth-submit:hover:not(:disabled) { background: linear-gradient(to bottom, #f5d78e, #eeb933); }
+.auth-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+.auth-terms { font-size: 11px; color: var(--text-secondary); margin-top: 14px; line-height: 1.5; }
+.auth-terms a { color: var(--amazon-blue); }
+.auth-divider {
+  width: 100%; max-width: 350px;
+  display: flex; align-items: center; gap: 10px;
+  margin: 8px 0;
+}
+.auth-divider::before, .auth-divider::after {
+  content: ''; flex: 1; height: 1px; background: #ddd;
+}
+.auth-divider span { font-size: 12px; color: var(--text-secondary); white-space: nowrap; }
+.auth-create-btn {
+  width: 100%; padding: 9px;
+  background: linear-gradient(to bottom, #f7f8fa, #e7e9ec);
+  border: 1px solid #adb1b8; border-radius: var(--radius);
+  font-size: 13px; cursor: pointer;
+}
+.auth-create-btn:hover { background: linear-gradient(to bottom, #e7e9ec, #d9dce1); }
+
+/* Shared form styles used in ProfileEditPage */
+.form-group { margin-bottom: 14px; }
+.form-label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 4px; color: #0f1111; }
+.req { color: var(--amazon-red); margin-left: 2px; }
+.form-input {
+  width: 100%; padding: 8px 10px;
+  border: 1px solid #a6a6a6; border-radius: var(--radius);
+  font-size: 14px; outline: none; box-sizing: border-box;
+  font-family: inherit;
+}
+.form-input:focus { border-color: var(--amazon-orange); box-shadow: 0 0 0 2px rgba(255,153,0,0.25); }
+.form-input.error { border-color: var(--amazon-red); }
+.form-error { font-size: 12px; color: var(--amazon-red); display: block; margin-top: 3px; }
+
+.btn-primary {
+  display: inline-block; padding: 9px 16px;
+  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+  border: 1px solid #a88734; border-radius: var(--radius);
+  font-size: 14px; font-weight: 500; cursor: pointer;
+  text-align: center; transition: all 0.15s;
+}
+.btn-primary:hover:not(:disabled) { background: linear-gradient(to bottom, #f5d78e, #eeb933); }
+.btn-primary:disabled { opacity: 0.7; cursor: not-allowed; }
+
+.btn-secondary {
+  display: inline-block; padding: 9px 16px;
+  background: linear-gradient(to bottom, #f7f8fa, #e7e9ec);
+  border: 1px solid #adb1b8; border-radius: var(--radius);
+  font-size: 14px; cursor: pointer; color: #0f1111;
+  text-align: center; transition: all 0.15s;
+}
+.btn-secondary:hover { background: linear-gradient(to bottom, #e7e9ec, #d9dce1); text-decoration: none; }
+
+/* Pincode validation icon */
+.pincode-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  pointer-events: none;
+}
+.form-input.valid {
+  border-color: #2e7d32;
+  background: #f9fff9;
+}
+@keyframes spin { from { transform: translateY(-50%) rotate(0deg); } to { transform: translateY(-50%) rotate(360deg); } }
+.spinning { animation: spin 0.8s linear infinite; }

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "name": "amazon-clone-frontend",
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "framework": "create-react-app",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "env": {
+    "REACT_APP_API_URL": "https://your-backend.render.com/api"
+  }
+}

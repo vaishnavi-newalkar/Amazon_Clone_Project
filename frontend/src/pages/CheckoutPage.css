@@ -1,0 +1,82 @@
+.checkout-page { padding: 16px 0 40px; }
+.checkout-header { display: flex; align-items: center; justify-content: space-between; padding-bottom: 12px; border-bottom: 1px solid #ddd; margin-bottom: 20px; }
+.checkout-secure { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--amazon-green); }
+.checkout-layout { display: grid; grid-template-columns: 1fr 280px; gap: 20px; align-items: start; }
+
+/* Section */
+.checkout-section { background: #fff; border: 1px solid #ddd; border-radius: var(--radius); margin-bottom: 12px; overflow: hidden; }
+.checkout-section.collapsed { opacity: 0.9; }
+.section-head { display: flex; align-items: center; gap: 12px; padding: 14px 20px; cursor: pointer; }
+.section-head h2 { font-size: 18px; font-weight: 700; flex: 1; }
+.step-num {
+  width: 28px; height: 28px; background: var(--amazon-orange);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 14px; flex-shrink: 0;
+}
+.change-btn { font-size: 13px; color: var(--amazon-blue); }
+.change-btn:hover { text-decoration: underline; }
+
+.form-body { padding: 0 20px 20px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-group { margin-bottom: 14px; }
+.form-label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; }
+.req { color: var(--amazon-red); margin-left: 2px; }
+.form-input {
+  width: 100%; padding: 8px 10px; border: 1px solid #ddd;
+  border-radius: var(--radius); font-size: 14px; font-family: inherit;
+  transition: border-color 0.15s;
+}
+.form-input:focus { outline: none; border-color: var(--amazon-orange); box-shadow: 0 0 0 2px rgba(255,153,0,0.2); }
+.form-input.error { border-color: var(--amazon-red); }
+.form-error { font-size: 12px; color: var(--amazon-red); display: block; margin-top: 3px; }
+.btn-continue {
+  margin-top: 8px; padding: 10px 24px;
+  background: linear-gradient(to bottom, #f7a44c, #e8921a);
+  border: 1px solid #c77b0d; border-radius: 20px;
+  font-size: 14px; font-weight: 500; cursor: pointer;
+}
+.btn-continue:hover { background: linear-gradient(to bottom, #f59535, #d8820a); }
+
+/* Payment */
+.payment-options { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+.payment-opt {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px; border: 1px solid #ddd; border-radius: var(--radius);
+  cursor: pointer; font-size: 14px; transition: all 0.15s;
+}
+.payment-opt.selected { border-color: var(--amazon-orange); background: #fffbf0; font-weight: 600; }
+.payment-opt input { accent-color: var(--amazon-orange); }
+.mock-payment-note { background: #e8f4fd; border: 1px solid #007185; border-radius: 4px; padding: 8px 12px; font-size: 12px; color: #007185; margin-bottom: 16px; }
+
+/* Review */
+.review-title { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+.review-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #eee; }
+.review-item img { width: 56px; height: 56px; object-fit: contain; border: 1px solid #eee; border-radius: 4px; }
+.review-item-info { flex: 1; }
+.review-item-name { font-size: 13px; font-weight: 500; }
+.review-item-qty  { font-size: 12px; color: var(--text-secondary); }
+.review-item-price { font-size: 14px; font-weight: 700; white-space: nowrap; }
+
+.btn-place-order {
+  width: 100%; margin-top: 16px; padding: 12px;
+  background: linear-gradient(to bottom, #f7a44c, #e8921a);
+  border: 1px solid #c77b0d; border-radius: 20px;
+  font-size: 15px; font-weight: 700; cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-place-order:hover:not(:disabled) { background: linear-gradient(to bottom, #f59535, #d8820a); }
+.btn-place-order:disabled { opacity: 0.6; cursor: not-allowed; }
+.order-note { font-size: 11px; color: var(--text-secondary); text-align: center; margin-top: 8px; }
+
+/* Summary */
+.checkout-summary { background: #fff; border: 1px solid #ddd; border-radius: var(--radius); padding: 16px; position: sticky; top: 80px; }
+.checkout-summary h3 { font-size: 18px; font-weight: 700; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid #eee; }
+.sum-row { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 8px; }
+.total-row { font-size: 18px; font-weight: 700; padding-top: 10px; border-top: 1px solid #eee; margin-top: 4px; }
+.sum-free { font-size: 12px; color: var(--amazon-green); margin-top: 6px; }
+
+@media (max-width: 700px) {
+  .checkout-layout { grid-template-columns: 1fr; }
+  .checkout-summary { position: static; }
+  .form-row { grid-template-columns: 1fr; }
+}

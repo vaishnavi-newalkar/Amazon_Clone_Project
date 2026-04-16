@@ -1,0 +1,67 @@
+.account-page {
+  padding: 32px 16px 60px;
+  min-height: 70vh;
+}
+
+.account-heading {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 4px;
+  color: #0f1111;
+}
+
+.account-welcome {
+  font-size: 14px;
+  color: #565959;
+  margin-bottom: 24px;
+}
+
+.account-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.account-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.account-card:hover {
+  border-color: #c45500;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: inherit;
+}
+
+.account-card-icon {
+  flex-shrink: 0;
+  width: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.account-card-body {}
+
+.account-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f1111;
+  margin: 0 0 4px;
+}
+
+.account-card-desc {
+  font-size: 13px;
+  color: #565959;
+  margin: 0;
+  line-height: 1.4;
+}

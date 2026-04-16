@@ -1,0 +1,97 @@
+.cart-page { padding: 16px 0 40px; }
+.cart-title { font-size: 28px; font-weight: 400; border-bottom: 1px solid #ddd; padding-bottom: 12px; margin-bottom: 16px; }
+
+.cart-empty { text-align: center; padding: 60px 20px; background: #fff; border-radius: var(--radius); }
+.empty-icon { font-size: 60px; margin-bottom: 16px; }
+.cart-empty h2 { font-size: 24px; margin-bottom: 10px; }
+.cart-empty p  { color: var(--text-secondary); margin-bottom: 20px; font-size: 14px; }
+
+.cart-layout { display: grid; grid-template-columns: 1fr 280px; gap: 16px; align-items: start; }
+
+/* Items box */
+.cart-items-box { background: #fff; border: 1px solid #ddd; border-radius: var(--radius); padding: 16px; }
+.cart-header-row {
+  display: flex; justify-content: flex-end;
+  font-size: 12px; color: var(--text-secondary);
+  padding-bottom: 8px; border-bottom: 1px solid #eee; margin-bottom: 8px;
+}
+.header-price { margin-right: 16px; }
+
+.cart-item {
+  display: flex; gap: 16px; padding: 16px 0;
+  border-bottom: 1px solid #eee;
+}
+.cart-item:last-of-type { border-bottom: none; }
+
+.item-img-wrap { flex-shrink: 0; width: 120px; height: 120px; display: flex; align-items: center; justify-content: center; }
+.item-img-wrap img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+.item-details { flex: 1; }
+.item-name { font-size: 15px; color: var(--amazon-blue); font-weight: 500; text-decoration: none; display: block; margin-bottom: 4px; line-height: 1.4; }
+.item-name:hover { text-decoration: underline; color: var(--amazon-red); }
+.item-brand { font-size: 12px; color: var(--text-secondary); margin-bottom: 4px; }
+.item-stock-status { font-size: 13px; margin-bottom: 2px; }
+.item-prime { font-size: 12px; color: #007185; margin-bottom: 8px; }
+
+.item-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.qty-control {
+  display: flex; align-items: center;
+  border: 1px solid #ddd; border-radius: 6px; overflow: hidden;
+}
+.qty-control button {
+  width: 30px; height: 30px; background: #f0f0f0; border: none;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.1s;
+}
+.qty-control button:hover:not(:disabled) { background: #ddd; }
+.qty-control button:disabled { opacity: 0.4; }
+.qty-val { width: 38px; text-align: center; font-size: 14px; font-weight: 600; }
+
+.sep { color: #ddd; }
+.item-delete, .item-save {
+  background: none; border: none; cursor: pointer;
+  font-size: 13px; color: var(--amazon-blue); padding: 0;
+}
+.item-delete:hover, .item-save:hover { text-decoration: underline; color: var(--amazon-red); }
+
+.item-price { font-size: 18px; font-weight: 700; margin-left: auto; white-space: nowrap; }
+
+.cart-subtotal-row {
+  text-align: right; padding-top: 12px;
+  font-size: 18px; color: var(--text-secondary);
+}
+
+/* Summary */
+.order-summary {
+  background: #fff; border: 1px solid #ddd;
+  border-radius: var(--radius); padding: 16px;
+  position: sticky; top: 80px;
+}
+.summary-secure {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12px; color: var(--amazon-green);
+  margin-bottom: 10px;
+}
+.summary-sub { font-size: 16px; color: var(--text-secondary); }
+.summary-total { font-size: 24px; font-weight: 700; margin: 4px 0; }
+.summary-shipping { font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; }
+.summary-free-ship { font-size: 13px; color: var(--amazon-green); margin-bottom: 8px; }
+.summary-grand {
+  display: flex; justify-content: space-between;
+  font-size: 17px; margin: 10px 0 14px;
+  padding-top: 10px; border-top: 1px solid #eee;
+}
+.btn-checkout {
+  width: 100%; padding: 10px;
+  background: linear-gradient(to bottom, #f7a44c, #e8921a);
+  border: 1px solid #c77b0d; border-radius: 20px;
+  font-size: 14px; font-weight: 500; cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-checkout:hover { background: linear-gradient(to bottom, #f59535, #d8820a); }
+
+@media (max-width: 700px) {
+  .cart-layout { grid-template-columns: 1fr; }
+  .order-summary { position: static; }
+  .item-img-wrap { width: 80px; height: 80px; }
+}
