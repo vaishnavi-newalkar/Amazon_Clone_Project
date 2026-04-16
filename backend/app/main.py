@@ -23,7 +23,11 @@ app = FastAPI(
 # CORS configuration - allow frontend (local dev + deployed Vercel)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:3000", 
+        "http://localhost:5173", 
+        "https://amazon-clone-project-lyart.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
