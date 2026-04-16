@@ -44,9 +44,12 @@ export default function HomePage() {
   useEffect(() => {
     Promise.all([productsAPI.featured(12), categoriesAPI.list()])
       .then(([pRes, cRes]) => {
-        setFeatured(pRes.data);
-        setCategories(cRes.data);
+        const pData = pRes.data;
+        const cData = cRes.data;
+        setFeatured(Array.isArray(pData) ? pData : (pData?.products || []));
+        setCategories(Array.isArray(cData) ? cData : (cData?.categories || []));
       })
+      .catch(() => {})
       .finally(() => setLoading(false));
   }, []);
 

@@ -24,7 +24,12 @@ export default function Navbar() {
   const userMenuRef = useRef(null);
 
   useEffect(() => {
-    categoriesAPI.list().then(r => setCategories(r.data)).catch(() => {});
+    categoriesAPI.list()
+      .then(r => {
+        const data = r.data;
+        setCategories(Array.isArray(data) ? data : (data?.categories || []));
+      })
+      .catch(() => setCategories([]));
   }, []);
 
   // Close dropdown when clicking outside
