@@ -25,10 +25,15 @@ if "ssl-mode" in db_url or "ssl_mode" in db_url:
     db_url = db_url.rstrip('?').rstrip('&')
 
 # Build connect_args for SSL if needed
+# Aiven uses self-signed certificates, so we create an SSL context
+# that encrypts the connection but accepts self-signed certs
 connect_args = {}
-if ssl_required:
+if ssl_required or "aivencloud" in db_url:
     import ssl as ssl_module
-    connect_args["ssl"] = {"ca": "/etc/ssl/certs/ca-certificates.crt"}
+    ssl_ctx = ssl_module.create_default_context()
+    ssl_ctx.check_hostname = False
+    ssl_ctx.verify_mode = ssl_module.CERT_NONE
+    connect_args["ssl"] = ssl_ctx
 
 # Create SQLAlchemy engine
 engine = create_engine(
