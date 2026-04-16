@@ -1,6 +1,5 @@
 # 🛒 Amazon Clone — Full-Stack E-Commerce Platform
 
-A production-ready, full-featured Amazon clone built for the Scaler SDE Intern Assignment.
 
 ![Tech Stack](https://img.shields.io/badge/Frontend-React.js-61DAFB?logo=react)
 ![Tech Stack](https://img.shields.io/badge/Backend-FastAPI-009688?logo=fastapi)
@@ -9,9 +8,7 @@ A production-ready, full-featured Amazon clone built for the Scaler SDE Intern A
 ---
 
 ## 🚀 Live Demo
-- **Frontend:** https://your-app.vercel.app
-- **Backend API:** https://your-api.render.com
-- **API Docs (Swagger):** https://your-api.render.com/docs
+- **Frontend:** [https://your-app.vercel.app](https://amazon-clone-project-lyart.vercel.app/)
 
 **Test Credentials:** `test@example.com` / `password123`
 
