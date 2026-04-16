@@ -272,5 +272,3 @@ When `EMAIL_ENABLED=False`, order confirmations are logged to the console (mock 
 6. No guest checkout — login required for cart/orders
 
 ---
-
-*Built with ❤️ for Scaler SDE Intern Assignment*
